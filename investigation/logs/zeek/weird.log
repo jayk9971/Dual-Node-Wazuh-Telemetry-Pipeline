@@ -1,0 +1,5 @@
+{"ts":1737575746.688515,"uid":"CqVa7MjnEV0ldvyod","id.orig_h":"10.1.17.215","id.orig_p":49751,"id.resp_h":"10.1.17.2","id.resp_p":49684,"name":"netlogon_dce_rpc_auth_type","addl":"68","notice":false,"peer":"zeek","source":"DCE_RPC"}
+{"ts":1737575772.107682,"uid":"CjFcYJCUHyjEUzbUe","id.orig_h":"10.1.17.215","id.orig_p":49761,"id.resp_h":"10.1.17.2","id.resp_p":49668,"name":"netlogon_dce_rpc_auth_type","addl":"68","notice":false,"peer":"zeek","source":"DCE_RPC"}
+{"ts":1737576365.675165,"uid":"CcqBy43UcTMuJuqZCa","id.orig_h":"10.1.17.215","id.orig_p":49844,"id.resp_h":"10.1.17.2","id.resp_p":49668,"name":"netlogon_dce_rpc_auth_type","addl":"68","notice":false,"peer":"zeek","source":"DCE_RPC"}
+{"ts":1737577689.916537,"uid":"CGwKak4gDe7B9bZyG9","id.orig_h":"10.1.17.215","id.orig_p":49919,"id.resp_h":"10.1.17.2","id.resp_p":49668,"name":"netlogon_dce_rpc_auth_type","addl":"68","notice":false,"peer":"zeek","source":"DCE_RPC"}
+{"ts":1737577947.684341,"uid":"C16cYF166ioUQCuIQf","id.orig_h":"10.1.17.215","id.orig_p":49956,"id.resp_h":"10.1.17.2","id.resp_p":49668,"name":"netlogon_dce_rpc_auth_type","addl":"68","notice":false,"peer":"zeek","source":"DCE_RPC"}

@@ -1,0 +1,12 @@
+Indicator,Type,Source,Context,Confidence
+5[.]252[.]153[.]241,IPv4 Address,Wireshark HTTP session export,Served TeamViewer executable,High
+904280f20d697d876ab90a1b74c0f22a83b859e8b0519cb411fda26f1642f53e,SHA-256 File Hash,Wireshark HTTP object export + sha256sum,Known TeamViewer.exe hash,High
+master16.teamviewer.com,Domain,DNS response packet (frame 15978),DynGate registration domain,High
+185[.]188[.]32[.]26,IPv4 Address,DNS resolution + Wireshark TCP streams 163-180,Legitimate DynGate registration,High
+ping3.dyngate.com,Domain,DNS traffic follow-stream (UDP stream 155),DynGate keepalive domain,High
+91930119,TeamViewer Session/Device ID,Cleartext HTTP din.aspx response body (TCP streams 163-180),Victim DynGate session ID,Medium
+45[.]125[.]66[.]32,IPv4 Address,Zeek conn.log (id.resp_h),Host Baltic TLS beacon,Medium-High
+45[.]125[.]66[.]252,IPv4 Address,Zeek conn.log (id.resp_h),Possible fallback channel,Medium
+45[.]125[.]66[.]0/24,IPv4 CIDR (hosting block),RIPE/APNIC RDAP lookup,Host Baltic hosting block,Medium
+tele-asia.net,Domain (abuse-contact anomaly),RIPE/APNIC RDAP lookup for 45[.]125[.]66[.]32 and 45[.]125[.]66[.]252,Mismatched abuse contact,Low
+TCP/2917,Non-standard port,Zeek conn.log (id.resp_p),Non-standard beacon port,Medium

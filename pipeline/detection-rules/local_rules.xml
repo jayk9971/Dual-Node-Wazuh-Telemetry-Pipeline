@@ -1,0 +1,71 @@
+<group name="local,suricata_custom,">
+
+  <rule id="100010" level="10">
+    <if_sid>86601</if_sid>
+    <field name="alert.signature_id">^9000001$</field>
+    <description>Suricata: Fileless PowerShell backdoor beacon, numeric bot-ID URI poll (local Suricata SID 9000001)</description>
+    <mitre>
+      <id>T1071.001</id>
+      <id>T1105</id>
+    </mitre>
+    <group>local_trap,c2_beacon,</group>
+  </rule>
+
+  <rule id="100011" level="12">
+    <if_sid>86601</if_sid>
+    <field name="alert.signature_id">^9000002$</field>
+    <description>Suricata: PowerShell backdoor status/telemetry callback, "?k=" parameter (local Suricata SID 9000002)</description>
+    <mitre>
+      <id>T1071.001</id>
+      <id>T1041</id>
+    </mitre>
+    <group>local_trap,c2_beacon,</group>
+  </rule>
+
+  <rule id="100012" level="12">
+    <if_sid>86601</if_sid>
+    <field name="alert.signature_id">^9000003$</field>
+    <description>Suricata: Fake update/Teams-themed HTA VBScript dropper launching hidden PowerShell (local Suricata SID 9000003)</description>
+    <mitre>
+      <id>T1204.002</id>
+      <id>T1059.005</id>
+      <id>T1059.001</id>
+    </mitre>
+    <group>local_trap,initial_access,</group>
+  </rule>
+
+  <rule id="100013" level="12">
+    <if_sid>86601</if_sid>
+    <field name="alert.signature_id">^9000004$</field>
+    <description>Suricata: Self-signed TLS certificate with CN set to a bare IP address, possible C2 (local Suricata SID 9000004)</description>
+    <mitre>
+      <id>T1071.001</id>
+      <id>T1573</id>
+    </mitre>
+    <group>local_trap,c2_tls,</group>
+  </rule>
+
+  <rule id="100014" level="14" frequency="1" timeframe="120">
+    <if_matched_sid>100010</if_matched_sid>
+    <if_sid>100011</if_sid>
+    <same_source_ip />
+    <description>Correlated: fileless PowerShell backdoor beacon and its status/telemetry callback observed from the same host within 120 seconds, high-confidence active backdoor session</description>
+    <mitre>
+      <id>T1071.001</id>
+      <id>T1105</id>
+      <id>T1041</id>
+    </mitre>
+    <group>local_trap,correlation,c2_confirmed,</group>
+  </rule>
+
+  <rule id="100015" level="13" frequency="5" timeframe="300">
+    <if_matched_sid>100010</if_matched_sid>
+    <same_source_ip />
+    <description>Correlated: sustained fileless PowerShell backdoor beaconing, 5 or more polls in 5 minutes, from a single host, likely active infection rather than an isolated match</description>
+    <mitre>
+      <id>T1071.001</id>
+    </mitre>
+    <group>local_trap,correlation,c2_confirmed,</group>
+  </rule>
+
+</group>
